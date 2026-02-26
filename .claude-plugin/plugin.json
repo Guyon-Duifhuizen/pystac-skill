@@ -1,0 +1,12 @@
+{
+  "name": "pystac-skill",
+  "description": "Claude Code skill for searching satellite imagery catalogs via pystac-client",
+  "version": "1.0.0",
+  "author": {
+    "name": "Guyon Duifhuizen"
+  },
+  "homepage": "https://github.com/Guyon-Duifhuizen/pystac-skill",
+  "repository": "https://github.com/Guyon-Duifhuizen/pystac-skill",
+  "license": "MIT",
+  "keywords": ["stac", "satellite", "sentinel", "landsat", "copernicus", "earth-observation", "pystac-client"]
+}
