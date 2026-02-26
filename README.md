@@ -93,8 +93,6 @@ pystac-skill/
 ├── skills/
 │   └── pystac-client/
 │       └── SKILL.md             # The skill definition
-├── pyproject.toml
-├── uv.lock
 └── README.md
 ```
 
