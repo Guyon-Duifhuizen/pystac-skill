@@ -1,24 +1,36 @@
-# pystac-skill - Claude Code Skill
+# pystac-skill - Claude Code Plugin
 
-A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skill for searching satellite imagery catalogs using [pystac-client](https://github.com/stac-utils/pystac-client).
+A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin for searching satellite imagery catalogs using [pystac-client](https://github.com/stac-utils/pystac-client).
 
 Ask Claude to find satellite imagery by describing what you need in natural language.
 
-## Install
+## Install as Plugin
 
-Copy the `SKILL.md` file into your Claude Code skills directory:
+Install directly from GitHub inside Claude Code:
+
+```
+/plugin install pystac-skill --source github:Guyon-Duifhuizen/pystac-skill
+```
+
+Or add via a marketplace that includes this plugin (see [Distributing via marketplace](#distributing-via-marketplace)).
+
+### Manual Install
+
+Copy the skill into your Claude Code skills directory:
 
 ```bash
 # Personal (available in all projects)
 mkdir -p ~/.claude/skills/pystac-client
-cp SKILL.md ~/.claude/skills/pystac-client/
+cp skills/pystac-client/SKILL.md ~/.claude/skills/pystac-client/
 
 # Or project-level (available in one project)
 mkdir -p .claude/skills/pystac-client
-cp SKILL.md .claude/skills/pystac-client/
+cp skills/pystac-client/SKILL.md .claude/skills/pystac-client/
 ```
 
-Then install the Python dependency:
+### Python Dependency
+
+Ensure `pystac-client` is installed in your Python environment:
 
 ```bash
 pip install pystac-client
@@ -52,6 +64,39 @@ Claude will use the `stac-client` CLI or write Python scripts depending on the c
 - CQL2 filtering, authentication patterns, retry/timeout configuration
 - Common collection IDs across endpoints
 - Practical tips (cloud cover filtering, `jq` piping, result counting)
+
+## Distributing via Marketplace
+
+To include this plugin in your own marketplace, add it to your `marketplace.json`:
+
+```json
+{
+  "plugins": [
+    {
+      "name": "pystac-skill",
+      "source": {
+        "source": "github",
+        "repo": "Guyon-Duifhuizen/pystac-skill"
+      },
+      "description": "Claude Code skill for searching satellite imagery catalogs via pystac-client"
+    }
+  ]
+}
+```
+
+## Project Structure
+
+```
+pystac-skill/
+├── .claude-plugin/
+│   └── plugin.json              # Plugin manifest
+├── skills/
+│   └── pystac-client/
+│       └── SKILL.md             # The skill definition
+├── pyproject.toml
+├── uv.lock
+└── README.md
+```
 
 ## Requirements
 
