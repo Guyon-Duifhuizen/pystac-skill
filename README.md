@@ -6,13 +6,12 @@ Ask Claude to find satellite imagery by describing what you need in natural lang
 
 ## Install as Plugin
 
-Install directly from GitHub inside Claude Code:
+In Claude Code, first add the marketplace, then install the plugin:
 
 ```
-/plugin install pystac-skill --source github:Guyon-Duifhuizen/pystac-skill
+/plugin marketplace add Guyon-Duifhuizen/pystac-skill
+/plugin install pystac-skill@pystac-skill
 ```
-
-Or add via a marketplace that includes this plugin (see [Distributing via marketplace](#distributing-via-marketplace)).
 
 ### Manual Install
 
@@ -89,6 +88,7 @@ To include this plugin in your own marketplace, add it to your `marketplace.json
 ```
 pystac-skill/
 ├── .claude-plugin/
+│   ├── marketplace.json         # Marketplace catalog
 │   └── plugin.json              # Plugin manifest
 ├── skills/
 │   └── pystac-client/

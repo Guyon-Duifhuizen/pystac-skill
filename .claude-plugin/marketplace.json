@@ -1,0 +1,17 @@
+{
+  "name": "pystac-skill",
+  "owner": {
+    "name": "Guyon Duifhuizen"
+  },
+  "metadata": {
+    "description": "Claude Code plugin for searching satellite imagery catalogs via pystac-client"
+  },
+  "plugins": [
+    {
+      "name": "pystac-skill",
+      "source": "./",
+      "description": "Search satellite imagery catalogs using pystac-client",
+      "version": "1.0.0"
+    }
+  ]
+}
